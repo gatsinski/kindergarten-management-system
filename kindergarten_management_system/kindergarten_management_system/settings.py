@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'menus',
     'sekizai',
     'treebeard',
+    'djangocms_text_ckeditor',
 
     # Django apps
     'django.contrib.admin',
