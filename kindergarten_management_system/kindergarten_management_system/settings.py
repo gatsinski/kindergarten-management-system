@@ -53,6 +53,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+
+    # Project apps
+    'kindergarten_management_system.contrib.kindergartens',
 )
 
 MIDDLEWARE_CLASSES = (
