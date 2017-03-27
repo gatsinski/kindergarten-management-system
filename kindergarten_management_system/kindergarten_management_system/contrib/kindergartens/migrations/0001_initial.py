@@ -17,8 +17,8 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(verbose_name='Name', max_length=254)),
             ],
             options={
-                'verbose_name': 'Kindergarten',
-                'verbose_name_plural': 'Kindergartens',
+                'verbose_name': 'City',
+                'verbose_name_plural': 'Cities',
             },
         ),
         migrations.CreateModel(
@@ -41,8 +41,8 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(verbose_name='Name', max_length=254)),
             ],
             options={
-                'verbose_name': 'Kindergarten',
-                'verbose_name_plural': 'Kindergartens',
+                'verbose_name': 'Kindergarten type',
+                'verbose_name_plural': 'Kindergarten types',
             },
         ),
         migrations.AddField(
