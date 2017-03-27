@@ -77,6 +77,11 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.language.LanguageCookieMiddleware',
 )
 
+
+AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',
+                           ('kindergarten_management_system.'
+                            'utils.backends.EmailBackend'))
+
 ROOT_URLCONF = 'kindergarten_management_system.urls'
 
 TEMPLATES = [
