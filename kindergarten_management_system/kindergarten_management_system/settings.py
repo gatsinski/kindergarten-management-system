@@ -56,6 +56,7 @@ INSTALLED_APPS = (
 
     # Project apps
     'kindergarten_management_system.contrib.kindergartens',
+    'kindergarten_management_system.contrib.teachers',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -75,6 +76,11 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
 )
+
+
+AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',
+                           ('kindergarten_management_system.'
+                            'utils.backends.EmailBackend'))
 
 ROOT_URLCONF = 'kindergarten_management_system.urls'
 
