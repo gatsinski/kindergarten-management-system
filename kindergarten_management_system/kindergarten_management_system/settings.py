@@ -57,6 +57,8 @@ INSTALLED_APPS = (
     # Project apps
     'kindergarten_management_system.contrib.kindergartens',
     'kindergarten_management_system.contrib.teachers',
+    'kindergarten_management_system.contrib.children',
+    'kindergarten_management_system.contrib.parents',
 )
 
 MIDDLEWARE_CLASSES = (
