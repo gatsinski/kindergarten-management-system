@@ -41,4 +41,4 @@ class Child(models.Model):
 
     @property
     def age(self):
-        return (timezone.now().date - self.birthdate).date
+        return timezone.now().year - child.birthdate.year
