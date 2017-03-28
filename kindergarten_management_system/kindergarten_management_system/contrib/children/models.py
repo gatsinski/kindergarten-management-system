@@ -14,6 +14,7 @@ class Child(models.Model):
     middle_name = models.CharField(_('Middle name'), max_length=254)
     last_name = models.CharField(_('Last name'), max_length=254)
     birthdate = models.DateField(_('Birthdate'))
+    personal_id = models.BigIntegerField(_('Personal ID'))
     parents = models.ManyToManyField(Parent)
     kindergarten = models.ForeignKey(Kindergarten)
     address = models.CharField(_('Address'), max_length=254)
