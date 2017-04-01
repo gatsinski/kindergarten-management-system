@@ -1,0 +1,45 @@
+{% extends 'base/base.html' %}
+{% load cms_tags i18n %}
+
+
+{% block content %}
+    {% for field in form %}
+        {% if field.errors %}
+          <li>
+              {{ field.label }} :
+              {% for error in field.errors %}
+                  {{ error }}
+              {% endfor %}
+          </li>
+        {% endif %}
+    {% endfor %}
+    {% if form.non_field_errors %}
+        <li>{{ form.non_field_errors|striptags }}</li>
+    {% endif %}
+
+<p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
+
+<form action="#" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ wizard.management_form }}
+    {{ wizard.form.formset.management_form }}
+
+    {{ wizard.form }}
+
+    {% for subform in wizard.form.formset %}
+        <div class="subform" id="formset_{{ forloop.counter0 }}">
+            {{ subform.name.label }}
+            {{ subform.name }}
+            {{ subform.file }}
+        </div>
+    {% endfor %}
+
+{% if wizard.steps.prev %}
+<button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">{% trans "first step" %}</button>
+<button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">{% trans "prev step" %}</button>
+{% endif %}
+
+    <input type="submit" value="{% trans 'Continue' %}">
+</form>
+{% endblock content %}

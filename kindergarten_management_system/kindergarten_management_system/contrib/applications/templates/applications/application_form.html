@@ -1,0 +1,67 @@
+{% extends 'base/base.html' %}
+{% load cms_tags i18n staticfiles %}
+
+
+{% block content %}
+    {% for field in wizard.form %}
+        {% if field.errors %}
+          <li>
+              {{ field.label }} :
+              {% for error in field.errors %}
+                  {{ error }}
+              {% endfor %}
+          </li>
+        {% endif %}
+    {% endfor %}
+    {% for form in wizard.form.formset %}
+        {% for field in form %}
+            {% if field.errors %}
+                <li>
+                    {{ field.label }} :
+                    {% for error in field.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </li>
+            {% endif %}
+        {% endfor %}
+        {% if form.non_field_errors %}
+            <li>{{ form.non_field_errors|striptags }}</li>
+        {% endif %}
+    {% endfor %}
+    {% if wizard.form.non_field_errors %}
+        <li>{{ wizard.form.non_field_errors|striptags }}</li>
+    {% endif %}
+
+
+<p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
+
+<form action="#" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ wizard.management_form }}
+    {{ wizard.form.formset.management_form }}
+
+    {{ wizard.form }}
+
+    {% for subform in wizard.form.formset %}
+        <div class="subform">
+            {{ subform.name.label }}
+            {{ subform.name }}
+            {{ subform.file }}
+        </div>
+    {% endfor %}
+    <input type="button" id="remove_last" value="{% trans 'Remove last' %}">
+    <input type="button" id="add_another" value="{% trans 'Add another' %}">
+
+{% if wizard.steps.prev %}
+    <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">{% trans "First step" %}</button>
+    <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">{% trans "Previous step" %}</button>
+{% endif %}
+
+    <input type="submit" value="{% trans 'Continue' %}">
+</form>
+{% endblock content %}
+
+{% block javascript %}
+    <script type="text/javascript" src="{% static 'applications/applications.js' %}"></script> 
+{% endblock %}
