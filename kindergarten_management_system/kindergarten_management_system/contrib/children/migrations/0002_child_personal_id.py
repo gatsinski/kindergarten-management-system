@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='child',
             name='personal_id',
-            field=models.BigIntegerField(default='', verbose_name='Personal ID'),
+            field=models.BigIntegerField(default=0, verbose_name='Personal ID'),
             preserve_default=False,
         ),
     ]
