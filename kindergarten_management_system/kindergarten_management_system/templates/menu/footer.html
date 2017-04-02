@@ -1,0 +1,25 @@
+{% load cms_tags %}
+
+<ul class="footer">
+{% for child in children %}
+    <li>
+        <a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">
+            {{ child.get_menu_title }}
+        </a>
+
+    {% if child.children %}
+        <div>
+            <ul>
+            {% for subchild in child.children %}
+                <li>
+                    <a href="{{ subchild.attr.redirect_url|default:subchild.get_absolute_url }}">
+                        {{ subchild.get_menu_title }}
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    </li>
+{% endfor %}
+</ul>

@@ -1,0 +1,21 @@
+{% load cms_tags %}
+
+<ul class="menu">
+{% for child in children %}
+    <li>
+        <a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}" class="first_level_menu_item {% if forloop.counter == 1 %} first {% endif %}">
+            {{ child.get_menu_title }}
+        </a>
+
+    {% if child.children %}
+        <div class="second_level_menu">
+            {% for subchild in child.children %}
+                <a class="second_level_menu_item {% if forloop.counter == 1 %} first {% endif %}" href="{{ subchild.attr.redirect_url|default:subchild.get_absolute_url }}">
+                    {{ subchild.get_menu_title }}
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+    </li>
+{% endfor %}
+</ul>

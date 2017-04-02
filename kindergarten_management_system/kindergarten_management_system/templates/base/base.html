@@ -1,16 +1,21 @@
-{% load cms_tags sekizai_tags %}
+{% load cms_tags sekizai_tags menu_tags staticfiles %}
 <html>
     <head>
         <title>{% page_attribute "page_title" %}</title>
         {% render_block "css" %}
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         {% block css %}{% endblock %}
     </head>
     <body>
         {% cms_toolbar %}
+        {% show_menu 0 100 100 100 "menu/main_menu.html" %}
+
         {% block content %}
             {% placeholder 'content' %}
         {% endblock %}
+
+        {% show_menu 0 1 1 1 "menu/footer.html" %}
         {% render_block "js" %}
         {% block javascript %}{% endblock %}
     </body>
