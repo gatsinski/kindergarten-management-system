@@ -9,16 +9,13 @@
 
     {% if child.children %}
         <div class="second_level_menu">
-            <ul class="second_level_menu">
             {% for subchild in child.children %}
-                <li>
-                    <a class="second_level_menu_item {% if forloop.counter == 1 %} first {% endif %}" href="{{ subchild.attr.redirect_url|default:subchild.get_absolute_url }}">
-                        {{ subchild.get_menu_title }}
-                    </a>
-                </li>
+                <a class="second_level_menu_item {% if forloop.counter == 1 %} first {% endif %}" href="{{ subchild.attr.redirect_url|default:subchild.get_absolute_url }}">
+                    {{ subchild.get_menu_title }}
+                </a>
             {% endfor %}
-            </ul>
         </div>
     {% endif %}
     </li>
 {% endfor %}
+</ul>
