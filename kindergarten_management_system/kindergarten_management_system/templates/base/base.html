@@ -1,4 +1,4 @@
-{% load cms_tags sekizai_tags %}
+{% load cms_tags sekizai_tags menu_tags %}
 <html>
     <head>
         <title>{% page_attribute "page_title" %}</title>
@@ -8,6 +8,8 @@
     </head>
     <body>
         {% cms_toolbar %}
+        {% show_menu 0 100 100 100 "menu/main_menu.html" %}
+
         {% block content %}
             {% placeholder 'content' %}
         {% endblock %}
