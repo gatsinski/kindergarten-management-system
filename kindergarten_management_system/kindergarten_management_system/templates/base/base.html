@@ -4,7 +4,6 @@
         <title>{% page_attribute "page_title" %}</title>
         {% render_block "css" %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        {% block javascript %}{% endblock %}
     </head>
     <body>
         {% cms_toolbar %}
@@ -12,5 +11,6 @@
             {% placeholder 'content' %}
         {% endblock %}
         {% render_block "js" %}
+        {% block javascript %}{% endblock %}
     </body>
 </html>
