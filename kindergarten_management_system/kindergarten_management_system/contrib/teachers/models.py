@@ -24,7 +24,7 @@ class Teacher(User):
     specialty = models.ForeignKey(Specialty)
     kindergarten = models.ForeignKey(Kindergarten)
     address = models.CharField(_('Address'), max_length=254)
-    telephone = models.CharField('Телефон', max_length=15)
+    telephone = models.CharField('Phone', max_length=15)
 
     class Meta:
         verbose_name = _('Teacher')

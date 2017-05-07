@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
                 ('user_ptr', models.OneToOneField(parent_link=True, serialize=False, to=settings.AUTH_USER_MODEL, primary_key=True, auto_created=True)),
                 ('middle_name', models.CharField(max_length=254, verbose_name='Middle name')),
                 ('address', models.CharField(max_length=254, verbose_name='Address')),
-                ('telephone', models.CharField(max_length=15, verbose_name='Телефон')),
+                ('telephone', models.CharField(max_length=15, verbose_name='Phone')),
                 ('kindergarten', models.ForeignKey(to='kindergartens.Kindergarten')),
                 ('specialty', models.ForeignKey(to='teachers.Specialty')),
             ],

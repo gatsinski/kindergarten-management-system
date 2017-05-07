@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('user_ptr', models.OneToOneField(parent_link=True, serialize=False, primary_key=True, auto_created=True, to=settings.AUTH_USER_MODEL)),
                 ('middle_name', models.CharField(verbose_name='Middle name', max_length=254)),
                 ('address', models.CharField(verbose_name='Address', max_length=254)),
-                ('telephone', models.CharField(verbose_name='Телефон', max_length=15)),
+                ('telephone', models.CharField(verbose_name='Phone', max_length=15)),
             ],
             options={
                 'verbose_name': 'Parent',

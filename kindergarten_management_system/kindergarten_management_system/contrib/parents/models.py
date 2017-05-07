@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class Parent(User):
     middle_name = models.CharField(_('Middle name'), max_length=254)
     address = models.CharField(_('Address'), max_length=254)
-    telephone = models.CharField('Телефон', max_length=15)
+    telephone = models.CharField('Phone', max_length=15)
 
     class Meta:
         verbose_name = _('Parent')
