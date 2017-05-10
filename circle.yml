@@ -1,0 +1,9 @@
+machine:                                                                                                                                                                                                                                                                                               
+  python:                                                                                                                                                                
+    version: 3.5.2
+dependencies:
+  pre:
+    - pip install -r kindergarten_management_system/requirements.txt
+test:
+  override:
+    - python ./kindergarten_management_system/manage.py test
