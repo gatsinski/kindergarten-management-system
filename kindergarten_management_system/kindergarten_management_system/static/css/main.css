@@ -46,3 +46,28 @@ div.second_level_menu a:hover {
 ul.menu > li:hover div.second_level_menu {
     display: block;
 }
+
+li>a {
+    color: #10af98 !important;
+}
+
+li.active>a,
+.progress-bar {
+    color: #fff !important;
+    background-color: #10af98 !important;
+}
+
+.p-30-0 {
+    padding: 30px 0;
+}
+
+.footer {
+    display: -webkit-box;
+    background-color: #f7f7f7;
+    color: #a0a0a7;
+    padding: 2rem;
+}
+
+.footer-elements {
+    list-style: none;
+}

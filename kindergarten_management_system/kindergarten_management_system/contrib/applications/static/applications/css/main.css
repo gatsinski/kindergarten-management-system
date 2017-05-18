@@ -1,7 +1,18 @@
 /*** Custom classes ***/
+.m-tb-20 {
+    margin: 20px 0;
+}
+
+.nav.nav-pills > li {
+    pointer-events: none;
+}
 
 .display-none {
     display: none;
+}
+
+.display-inline-flex {
+    display: inline-flex;
 }
 
 .display-flex {
@@ -11,12 +22,20 @@
     display: flex;
 }
 
+.jc-fe {
+    justify-content: flex-end;
+}
+
 .jc-c {
     justify-content: center;
 }
 
 .ai-c {
     align-items: center;
+}
+
+.as-fe {
+    align-self: flex-end;
 }
 
 .fd-c {
@@ -52,18 +71,10 @@
     margin-top: 9px;
 }
 
-li>a {
-    color: #10af98 !important;
-}
-
-li.active>a,
-.progress-bar {
-    color: #fff !important;
-    background-color: #10af98 !important;
-}
-
-.form-error-txt,
-.form-error-txt:hover {
+.form-error-text,
+.form-error-text:hover {
+    list-style: none;
+    font-weight: 700;
     color: #e83939 !important;
 }
 

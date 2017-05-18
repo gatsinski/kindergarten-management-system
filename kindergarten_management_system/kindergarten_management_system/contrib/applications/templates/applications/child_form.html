@@ -1,45 +1,87 @@
 {% extends 'base/base.html' %}
-{% load cms_tags i18n %}
-
+{% load cms_tags i18n staticfiles %}
 
 {% block content %}
-    {% for field in form %}
-        {% if field.errors %}
-          <li>
-              {{ field.label }} :
-              {% for error in field.errors %}
-                  {{ error }}
-              {% endfor %}
-          </li>
-        {% endif %}
-    {% endfor %}
-    {% if form.non_field_errors %}
-        <li>{{ form.non_field_errors|striptags }}</li>
-    {% endif %}
+    <div class="container">
+        <div id="kmsWizard">
+            <form action="#" method="POST" enctype="multipart/form-data" id="appForm" class="form-horizontal">
+                {% csrf_token %}
+                {{ wizard.management_form }}
+                {{ wizard.form.formset.management_form }}
 
-<p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="container remove-padding">
+                            <ul class="nav nav-pills" id="createAppTabs">
+                                <li><a id="info-kg" href="#tab1" data-toggle="tab">Kindergarten Info</a></li>
+                                <li><a id="info-parent" href="#tab2" data-toggle="tab">Parent Info</a></li>
+                                <li class="active"><a id="info-child" href="#tab3" data-toggle="tab">Child Info</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="bar" class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active visible" id="tab2">
+                        {% for field in form %}
+                            {% if field.errors %}
+                            <li class="form-error-text">
+                                <i class="fa fa-exclamation-circle"></i>
+                                {{ field.label }} :
+                                {% for error in field.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if form.non_field_errors %}
+                            <li>
+                                <i class="fa fa-exclamation-circle"></i>
+                                {{ form.non_field_errors|striptags }}
+                            </li>
+                        {% endif %}
 
-<form action="#" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
+                        <div class="application-form display-flex jc-c">
+                            <div class="form-section app-content display-flex fd-c">
+                                {% for field in wizard.form %}
+                                    <div class="element-wrapper ai-c">
+                                        <label class="control-label" for="{{ field.auto_id }}">
+                                            {{ field.label }}
+                                        </label>
+                                        <input type="text"
+                                               id="{{ field.auto_id }}"
+                                               class="form-control" 
+                                               name="{{ field.html_name }}">
+                                    </div>
+                                {% endfor %}
 
-    {{ wizard.management_form }}
-    {{ wizard.form.formset.management_form }}
+                            </div>
+                        </div>
+                    </div>
 
-    {{ wizard.form }}
+                    <ul class="form-navigation pager wizard">
+                        {% if wizard.steps.prev %}
+                            <button class="previous first" name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">{% trans "First step" %}</button>
+                            <button class="previous" name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">{% trans "Previous step" %}</button>
+                        {% endif %}
 
-    {% for subform in wizard.form.formset %}
-        <div class="subform" id="formset_{{ forloop.counter0 }}">
-            {{ subform.name.label }}
-            {{ subform.name }}
-            {{ subform.file }}
+                            <input type="submit" class="submit pull-right" value="{% trans 'Continue' %}">
+                    </ul>
+                </div>
+            </form>
         </div>
-    {% endfor %}
-
-{% if wizard.steps.prev %}
-<button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">{% trans "first step" %}</button>
-<button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">{% trans "prev step" %}</button>
-{% endif %}
-
-    <input type="submit" value="{% trans 'Continue' %}">
-</form>
+    </div>
 {% endblock content %}
+
+{% block css %}
+        <link rel="stylesheet" href="{% static 'applications/css/main.css' %}">
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript" src="{% static 'applications/applications.js' %}"></script> 
+    <script type="text/javascript" src="{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'lib/bootstrap-wizard/jquery.bootstrap.wizard.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'applications/js/app.js' %}"></script> 
+{% endblock %}
