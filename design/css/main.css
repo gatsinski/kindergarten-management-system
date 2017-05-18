@@ -1,0 +1,81 @@
+/*** Custom classes ***/
+
+.display-none {
+    display: none;
+}
+
+.display-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.jc-c {
+    justify-content: center;
+}
+
+.ai-c {
+    align-items: center;
+}
+
+.fd-c {
+    flex-direction: column;
+}
+
+.app-content>div {
+    display: inline-flex;
+    justify-content: flex-end;
+    margin: 0 0 20px 0;
+    max-width: 100%;
+}
+
+.app-content input,
+.app-content select {
+    margin: 0 0 0 30px;
+    width: 200px;
+}
+
+.application-form .control-label {
+    padding-top: 0;
+}
+
+.remove-padding {
+    padding: 0;
+}
+
+* {
+    border-radius: 0 !important;
+}
+
+.navbar {
+    margin-top: 9px;
+}
+
+li>a {
+    color: #10af98 !important;
+}
+
+li.active>a,
+.progress-bar {
+    color: #fff !important;
+    background-color: #10af98 !important;
+}
+
+.form-error-txt,
+.form-error-txt:hover {
+    color: #e83939 !important;
+}
+
+.form-error-border,
+.form-error-border:hover {
+    border-color: #e83939 !important;
+}
+
+.submit {
+    display: inline-block;
+    padding: 5px 14px;
+    color: #10af98;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
