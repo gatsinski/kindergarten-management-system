@@ -6,4 +6,4 @@ dependencies:
     - pip install -r kindergarten_management_system/requirements.txt
 test:
   override:
-    - python ./kindergarten_management_system/manage.py test
+    - cd kindergarten_management_system && python manage.py test
