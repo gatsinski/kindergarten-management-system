@@ -2,3 +2,4 @@ Django==1.8.8
 django-cms==3.4.2
 djangocms-text-ckeditor==3.4.0
 django-filer==1.2.7
+django-import-export==0.5.1

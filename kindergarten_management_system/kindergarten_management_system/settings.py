@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'filer',
     'easy_thumbnails',
     'mptt',
+    'import_export',
 
     # Django apps
     'django.contrib.admin',
