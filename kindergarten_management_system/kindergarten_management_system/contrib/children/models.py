@@ -19,7 +19,7 @@ class Child(models.Model):
     kindergarten = models.ForeignKey(Kindergarten)
     address = models.CharField(_('Address'), max_length=254)
     # Is the child currently enrolled in the kindergarten or its
-    # application documents is still waiting to be approved by staff member
+    # application documents are still waiting to be approved by staff member
     is_active = models.BooleanField(_('Is active'), default=False)
 
     class Meta:
