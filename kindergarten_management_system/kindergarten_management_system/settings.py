@@ -162,3 +162,8 @@ SITE_ID = 1
 STATICFILES_DIRS = (
     os.path.join(PROJECT_PATH, 'static'),
 )
+
+DEFAULT_EMAIL = 'email@example.com'
+
+if DEBUG is True:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

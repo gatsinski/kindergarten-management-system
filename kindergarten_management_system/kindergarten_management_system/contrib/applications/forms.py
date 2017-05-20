@@ -35,9 +35,8 @@ class ApplicationForm(forms.ModelForm):
         if commit:
             instance.save()
             self.formset.save()
-            # TODO: Create send_staff_email and send_client_email methods
-            # instance.send_staff_email()
-            # instance.send_client_email()
+            instance.send_staff_email()
+            instance.send_client_email()
         return instance
 
 

@@ -1,0 +1,8 @@
+{% load i18n %}
+
+{% url 'admin:applications_application_changelist' as link %}
+{% blocktrans %}
+  A new application with reference number {{ reference_number }}
+  was submitted on {{ date }}. Click the following link to see the details.
+  {{ link }}  
+{% endblocktrans %}
