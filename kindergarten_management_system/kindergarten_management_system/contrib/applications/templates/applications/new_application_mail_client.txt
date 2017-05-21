@@ -1,0 +1,6 @@
+{% load i18n %}
+
+{% blocktrans %}
+  You have successfully submitted your application.
+  It is recorded under refference number {{ reference_number }} on {{ date }}.
+{% endblocktrans %}
