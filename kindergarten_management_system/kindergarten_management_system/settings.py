@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'mptt',
     'import_export',
+    'djangocms_forms',
 
     # Django apps
     'django.contrib.admin',
@@ -167,3 +168,20 @@ DEFAULT_EMAIL = 'email@example.com'
 
 if DEBUG is True:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+DJANGOCMS_FORMS_WIDGET_CSS_CLASSES = {'__all__': ('row', ),
+                                      'text': ('form-control', ),
+                                      'textarea': ('form-control', ),
+                                      'email': ('form-control', ),
+                                      'number': ('form-control', ),
+                                      'phone': ('form-control', ),
+                                      'url': ('form-control', ),
+                                      'checkbox': ('form-check', ),
+                                      'checkbox_multiple': ('form-check', ),
+                                      'select': ('form-control', ),
+                                      'radio': ('form-control', ),
+                                      'file': ('form-control-file', ),
+                                      'date': ('form-control', ),
+                                      'time': ('form-control', ),
+                                      'password': ('form-control', ), }
