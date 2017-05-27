@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'mptt',
     'import_export',
+    'djangocms_forms',
 
     # Django apps
     'django.contrib.admin',
