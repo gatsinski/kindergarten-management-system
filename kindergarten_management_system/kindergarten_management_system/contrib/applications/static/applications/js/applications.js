@@ -31,4 +31,15 @@ $(function() {
     $('#remove_last').on('click', function(e) {
             formsetManager('.subform:last', 'attachment_set', 'remove');
     });
+
+    $('#kmsWizard').bootstrapWizard({
+        onTabShow: function (tab, navigation, index) {
+            var $total = navigation.find('li').length,
+                $current = index + 1,
+                $percent = ($current / $total) * 100;
+            $('#kmsWizard .progress-bar').css({
+                width: $percent + '%'
+            });
+        }
+    });
 });
