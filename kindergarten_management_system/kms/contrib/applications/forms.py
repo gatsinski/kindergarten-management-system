@@ -2,8 +2,8 @@ from django import forms
 from django.forms import inlineformset_factory, BaseInlineFormSet
 
 from .models import Application, Attachment
-from kindergarten_management_system.contrib.children.models import Child
-from kindergarten_management_system.contrib.parents.models import Parent
+from kms.contrib.children.models import Child
+from kms.contrib.parents.models import Parent
 
 
 AttachmentFormset = inlineformset_factory(Application,

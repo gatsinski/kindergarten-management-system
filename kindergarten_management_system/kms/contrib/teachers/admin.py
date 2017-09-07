@@ -4,7 +4,7 @@ from import_export import fields
 from import_export.admin import ExportMixin
 from import_export.resources import ModelResource
 
-from kindergarten_management_system.contrib.teachers.models import \
+from kms.contrib.teachers.models import \
     Teacher, Specialty
 
 

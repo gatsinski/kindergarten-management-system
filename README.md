@@ -28,9 +28,9 @@ Creating a virtual environment is optional but yet highly recommeded.
 
 ## Installation
 
-You will need *Python 3* and *pip* to run this project. 
+You will need *Python 3* and *pip* to run this project.
 
-* Enter `kindergarten_management_system` inside project's main directory.
+* Enter `kms` inside project's main directory.
 * Type `pip install -r requirements.txt` in you terminal/command prompt.
 * Type `python manage.py migrate` to apply all database migrations. Currently the default database is SQLite. Edit the settings.py file if you want to use MySQL/MariaDB or PostgreSQL.
 * Type `python manage.py createsuperuser` if you need admin rights.

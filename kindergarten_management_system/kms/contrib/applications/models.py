@@ -3,11 +3,11 @@ from django.utils.translation import ugettext as _
 from django.utils.functional import cached_property
 from django.conf import settings
 
-from kindergarten_management_system.utils.emails import send_html_email
-from kindergarten_management_system.contrib.kindergartens.models import \
+from kms.utils.emails import send_html_email
+from kms.contrib.kindergartens.models import \
     Kindergarten
-from kindergarten_management_system.contrib.parents.models import Parent
-from kindergarten_management_system.contrib.children.models import Child
+from kms.contrib.parents.models import Parent
+from kms.contrib.children.models import Child
 
 
 class Application(models.Model):
