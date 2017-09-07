@@ -3,9 +3,9 @@ from django.utils import timezone
 from django.utils.translation import ugettext as _
 from django.utils.functional import cached_property
 
-from kindergarten_management_system.contrib.kindergartens.models import \
+from kms.contrib.kindergartens.models import \
     Kindergarten
-from kindergarten_management_system.contrib.parents.models import \
+from kms.contrib.parents.models import \
     Parent
 
 

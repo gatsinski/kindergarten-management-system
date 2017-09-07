@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     # Examples:
-    # url(r'^$', 'kindergarten_management_system.views.home', name='home'),
+    # url(r'^$', 'kms.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),

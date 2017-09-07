@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.core.files.uploadedfile import SimpleUploadedFile
 
 from .forms import ApplicationForm, ParentForm, ChildForm
-from kindergarten_management_system.contrib.kindergartens import models
+from kms.contrib.kindergartens import models
 
 
 CityData = {
