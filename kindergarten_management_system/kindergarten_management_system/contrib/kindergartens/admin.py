@@ -3,8 +3,7 @@ from django.contrib import admin
 from import_export.resources import ModelResource
 from import_export.admin import ImportExportModelAdmin, ExportMixin
 
-from kindergarten_management_system.contrib.kindergartens.models import \
-    Kindergarten, KindergartenType, City
+from .models import Kindergarten, KindergartenType, City
 
 
 class KindergartenResource(ModelResource):
