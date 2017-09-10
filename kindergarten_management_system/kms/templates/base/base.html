@@ -12,16 +12,17 @@
     </head>
     <body>
         {% cms_toolbar %}
-        {% show_menu 0 100 100 100 "menu/main_menu.html" %}
+        <div class="content">
 
-        <div class="container p-30-0">
-        {% block content %}
-            {% placeholder 'content' %}
-        {% endblock %}
+            {% show_menu 0 100 100 100 "menu/main_menu.html" %}
+
+            {% block content %}
+                {% placeholder 'content' %}
+            {% endblock %}
+
+            {% show_menu 0 1 1 1 "menu/footer.html" %}
+            {% render_block "js" %}
+            {% block javascript %}{% endblock %}
         </div>
-
-        {% show_menu 0 1 1 1 "menu/footer.html" %}
-        {% render_block "js" %}
-        {% block javascript %}{% endblock %}
     </body>
 </html>
