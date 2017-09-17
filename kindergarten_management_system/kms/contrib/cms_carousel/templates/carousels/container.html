@@ -1,0 +1,37 @@
+{% load cms_tags staticfiles sekizai_tags i18n %}
+
+<div id="{{ instance.pretty_id }}" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    {% for plugin in instance.child_plugin_instances %}
+      <li
+        data-target="#{{ instance.pretty_id }}"
+        data-slide-to="{{ forloop.counter0 }}"
+        {% if forloop.first %} class="active" {% endif %}>
+      </li>
+    {% endfor %}
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    {% for plugin in instance.child_plugin_instances %}
+      <div class="item {% if forloop.first %} active {% endif %}">
+        {% render_plugin plugin %}
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#{{ instance.pretty_id }}" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">{% trans 'Previous' %}</span>
+  </a>
+  <a class="right carousel-control" href="#{{ instance.pretty_id }}" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">{% trans 'Next' %}</span>
+  </a>
+</div>
+
+{% addtoblock "css" %}
+  <link rel="stylesheet" href="{% static 'carousels/main.css' %}">
+{% endaddtoblock %}

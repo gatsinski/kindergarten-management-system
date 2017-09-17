@@ -1,0 +1,10 @@
+{% load thumbnail %}
+
+<img src="{% thumbnail instance.image 1600x800 crop upscale %}"
+  alt="{{ instance.image.default_alt_text|default:'' }}">
+{% if instance.title or instance.text %}
+  <div class="carousel-caption">
+    <h3>{{ instance.title }}</h3>
+    <p>{{ instance.text }}</p>
+  </div>
+{% endif %}

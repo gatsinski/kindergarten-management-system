@@ -1,0 +1,23 @@
+.carousel .item {
+    height: 300px;
+}
+
+.carousel .carousel-control {
+    width: 50px;
+}
+
+/* Using type selector to override bootstrap styles */
+div.carousel-caption {
+    width: 100%;
+    padding: 0px 50px 30px 50px;
+    background: rgba(0,0,0,0.5);
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+/* Using type selector to override bootstrap styles */
+ol.carousel-indicators {
+    margin-bottom: 0px;
+    bottom: 10px;
+}
