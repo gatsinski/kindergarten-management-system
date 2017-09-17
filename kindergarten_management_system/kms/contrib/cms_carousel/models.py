@@ -9,7 +9,6 @@ from filer.fields.image import FilerImageField
 
 class CarouselContainerPluginModel(CMSPlugin):
     title = models.CharField(_('Title'), max_length=254)
-    # Currently not in use but may be needed in the future
     slug = models.SlugField(_('Slug'), max_length=254)
 
     class Meta:
@@ -22,7 +21,7 @@ class CarouselContainerPluginModel(CMSPlugin):
     @cached_property
     def pretty_id(self):
         # Used in HTML templates
-        return '{}}-{}'.format(self.slug, self.pk)
+        return '{}-{}'.format(self.slug, self.pk)
 
 
 class CarouselImagePluginModel(CMSPlugin):
