@@ -63,6 +63,7 @@ INSTALLED_APPS = (
     'kms.contrib.parents',
     'kms.contrib.applications',
     'kms.contrib.cms_carousel',
+    'kms.contrib.cms_content_blocks',
 )
 
 MIDDLEWARE_CLASSES = (
