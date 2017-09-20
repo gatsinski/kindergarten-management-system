@@ -1,0 +1,15 @@
+{% load cms_tags staticfiles sekizai_tags %}
+
+<div class="container-fluid">
+    <div class="row block-row {{ instance.color_class }}" id="{{ instance.pretty_id }}">
+        <div class="col">
+            {% for plugin in instance.child_plugin_instances %}
+                {% render_plugin plugin %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% addtoblock "css" %}
+    <link rel="stylesheet" href="{% static 'cms_content_blocks/main.css' %}">
+{% endaddtoblock %}
