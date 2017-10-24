@@ -187,3 +187,8 @@ DJANGOCMS_FORMS_WIDGET_CSS_CLASSES = {'__all__': ('row', ),
                                       'date': ('form-control', ),
                                       'time': ('form-control', ),
                                       'password': ('form-control', ), }
+
+try:
+    from .local_settings import *  # NOQA
+except ImportError:
+    pass
