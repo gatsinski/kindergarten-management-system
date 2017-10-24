@@ -5,3 +5,4 @@ django-filer==1.2.7
 django-import-export==0.5.1
 djangocms-forms==0.2.5
 pytz==2017.2
+psycopg2
