@@ -4,8 +4,7 @@ from import_export import fields
 from import_export.admin import ExportMixin
 from import_export.resources import ModelResource
 
-from kms.contrib.teachers.models import \
-    Teacher, Specialty
+from kms.contrib.teachers.models import Teacher, Specialty
 
 
 class TeacherResource(ModelResource):

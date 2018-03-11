@@ -4,8 +4,7 @@ from django.utils.functional import cached_property
 from django.conf import settings
 
 from kms.utils.emails import send_html_email
-from kms.contrib.kindergartens.models import \
-    Kindergarten
+from kms.contrib.kindergartens.models import Kindergarten
 from kms.contrib.parents.models import Parent
 from kms.contrib.children.models import Child
 
