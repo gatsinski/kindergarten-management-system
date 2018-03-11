@@ -86,8 +86,7 @@ MIDDLEWARE_CLASSES = (
 
 
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',
-                           ('kms.'
-                            'utils.backends.EmailBackend'))
+                           ('kms.utils.backends.EmailBackend'))
 
 ROOT_URLCONF = 'kms.urls'
 

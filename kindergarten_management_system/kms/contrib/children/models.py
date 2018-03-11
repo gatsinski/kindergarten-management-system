@@ -3,10 +3,8 @@ from django.utils import timezone
 from django.utils.translation import ugettext as _
 from django.utils.functional import cached_property
 
-from kms.contrib.kindergartens.models import \
-    Kindergarten
-from kms.contrib.parents.models import \
-    Parent
+from kms.contrib.kindergartens.models import Kindergarten
+from kms.contrib.parents.models import Parent
 
 
 class Child(models.Model):

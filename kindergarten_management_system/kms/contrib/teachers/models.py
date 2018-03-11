@@ -3,8 +3,7 @@ from django.utils.translation import ugettext as _
 from django.utils.functional import cached_property
 from django.contrib.auth.models import User
 
-from kms.contrib.kindergartens.models import \
-    Kindergarten
+from kms.contrib.kindergartens.models import Kindergarten
 
 
 class Specialty(models.Model):
