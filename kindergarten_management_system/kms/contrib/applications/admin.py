@@ -1,7 +1,9 @@
 from django.contrib import admin
 from django.utils.translation import ugettext as _
 
-from .models import Application, Attachment
+from parler.admin import TranslatableAdmin, TranslatableTabularInline
+
+from .models import Application, Attachment, Test, TestInline
 
 
 class AttachmentInline(admin.TabularInline):
@@ -29,3 +31,14 @@ class ApplicationAdmin(admin.ModelAdmin):
                        'parent',
                        'child')
     inlines = [AttachmentInline]
+
+
+class TestAdminInline(TranslatableTabularInline):
+    model = TestInline
+    fields = ('name',)
+
+
+@admin.register(Test)
+class TestAdmin(TranslatableAdmin):
+    inlines = (TestAdminInline,)
+    pass

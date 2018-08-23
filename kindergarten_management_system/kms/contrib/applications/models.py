@@ -3,6 +3,8 @@ from django.utils.translation import ugettext as _
 from django.utils.functional import cached_property
 from django.conf import settings
 
+from parler.models import TranslatableModel, TranslatedFields
+
 from kms.utils.emails import send_html_email
 from kms.contrib.kindergartens.models import Kindergarten
 from kms.contrib.parents.models import Parent
@@ -72,3 +74,18 @@ class Attachment(models.Model):
     application = models.ForeignKey(Application)
     name = models.CharField(_('Name'), max_length=254)
     file = models.FileField(upload_to='attachments')
+
+
+class Test(TranslatableModel):
+    test = models.CharField(_('Test'), max_length=254)
+    translations = TranslatedFields(
+        name=models.CharField(_('Name'), max_length=255),
+    )
+
+
+class TestInline(TranslatableModel):
+    test = models.ForeignKey(Test)
+    text = models.CharField(_('Name'), max_length=255),
+    translations = TranslatedFields(
+        name=models.CharField(_('Name'), max_length=255),
+    )

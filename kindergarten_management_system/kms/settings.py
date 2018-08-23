@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'mptt',
     'import_export',
     'djangocms_forms',
+    'parler',
 
     # Django apps
     'django.contrib.admin',
@@ -144,7 +145,15 @@ LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
     ('en', 'English'),
+    ('bg', 'Български'),
 ]
+
+PARLER_LANGUAGES = {
+    1: (
+        {'code': 'en'},
+        {'code': 'bg'},
+    )
+}
 
 TIME_ZONE = 'UTC'
 
